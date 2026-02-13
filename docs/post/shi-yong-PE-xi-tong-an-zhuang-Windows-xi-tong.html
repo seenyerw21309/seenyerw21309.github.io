@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/218428462?v=4&size=64"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="### 安装前的准备
+
+> 一个大于8GB的外部存储设备(如U盘,移动硬盘)
+> 一台待安装Windows系统的电脑
+> 一台可以正常使用的64位Windows系统电脑
+> 制作U盘可启动PE
+
+使用良心轻巧的纯净PE系统是我们能够正常安装Windows系统的保障.
+
+我们使用微PE系统.
+
+打开微PE的下载官网:
+
+https://www.wepe.com.cn/download.html
+
+下载微PE_v2.3版本.
+
+下载后得到一个软件,我们插入待制作PE的U盘,打开微PE工具箱.
+
+点击右下角的U盘标志,为U盘安装PE系统.
+
+确定待写入U盘为你插入的那个希望制作PE系统的U盘.
+
+> 请注意:使用微PE工具箱制作U盘PE系统的时候会进行U盘格式化,届时U盘里的数据会被清空.建议在制作之前备份U盘里的重要数据,或者用一个全新的U盘.
+
+直接点击下方'立即安装PE到U盘'
+
+软件会提示你格式化U盘是一个有数据丢失风险的操作,确定你的数据已经备份后,制作PE.
+
+> 等待大约1min,可以制作成功一个PE系统.
+
+> PE启动盘可以当做正常的U盘使用,我们的普通数据都可以放在U盘的大分区里.并不会受到其他影响.
+
+<img width='431' height='273' alt='Image' src='https://github.com/user-attachments/assets/7a6829e5-02f7-4bc8-9d88-c99a6def12d7' />
+
+### 下载Windows映像文件
+可在本站下载，多种系统版本可供选择
+可在资源整合盘或官网中自行下载
+资源整合盘：https://seenyerw21309.ysepan.com/
+官网：https://seenyerw21309.github.io/
+
+### 进入PE系统
+根据电脑主板型号的不同,进入PE系统的方式不同,但都是通过在开机的时候按下键盘上的按键进入PE系统的.
+
+![Image](https://github.com/user-attachments/assets/5a67edee-988a-4164-86aa-e4bc43af84fc)
+
+确定U盘已经被制作为PE系统启动盘.
+确定U盘里面有Windows系统的ISO文件.
+将待安装系统的电脑关机,并插入U盘.
+按下开机按钮,然后立刻快速按下当前电脑的开机启动热键
+进入选择启动项菜单的界面.这个界面因电脑而异,但会列出连接在这个电脑上的可启动设备.
+使用键盘上下键选择自己的U盘.一般可以通过U盘的品牌,容量等信息判断哪一个是U盘.
+回车,进入PE系统.
+在PE系统里安装全新Windows系统
+在PE系统里面安装Windows系统之前,我们需要确定:
+
+**哪一个分区要作为新Windows系统的C盘?**
+磁盘的分区表和分区规划与主板的固件是否匹配?
+**哪一个分区要作为新Windows系统的C盘?**
+一般来说,直接装到老Windows系统的分区里就可以.但是老Windows系统的分区需要格式化,才可以安装新的Windows系统.
+
+磁盘的分区表和分区规划与主板的固件是否匹配?
+一般情况下,新主板(UEFI固件)使用GPT磁盘分区表,老主板(BIOS固件)使用MBR分区表.
+
+UEFI固件需要一个FAT文件系统的EFI分区用作引导分区.
+
+BIOS固件需要磁盘上的一个分区是激活主分区,用于存放BOOTMGR引导文件和boot文件夹.
+
+> 如果你不太理解,不要紧,不要动磁盘分区和分区表,就在PE系统里格式化掉老系统的C盘,然后再往这里面安装一个新系统就可以了.
+
+### 下面介绍如何在PE系统里安装新系统.
+
+首先,确定待安装的系统盘是空的,文件系统为NTFS文件系统
+打开微PE桌面上的Windows安装器(实际上就是winntsetup)
+**选择Windows安装源:**
+选择下载的映像文件（通常为.wim或.esd格式，.GHO的安装方式本篇不赘述）
+**选择引导驱动器:**
+一般情况下Windows安装器会自动帮你选好,如果是UEFI固件,那么右侧会有一个绿色的EFI PART.
+如果是BIOS固件,那右侧会有三个绿色的圆点.
+如果有的圆点不是绿色,而是红色,那么说明引导驱动器有问题,安装系统后可能无法启动,需要依据情况判断如何配置.
+**选择系统驱动器**
+通俗的说,就是选择新系统的C盘.也就是安装系统的分区.
+请注意,这个分区一定是没有别的系统文件的NTFS分区.
+**'选项'区域**
+选择Windows系统的安装版本
+其它不用管
+点击右下角安装
+点击确定
+
+<img width='492' height='399' alt='Image' src='https://github.com/user-attachments/assets/5d64dae7-61c7-459e-b598-02da088c7bd9' />
+
+我们等待进度条跑完,就成功的安装Windows系统了.
+
+进入新系统
+上面的步骤结束后,我们可以重启电脑,拔下U盘,进入新安装后的Windows系统,体验系统开箱阶段.(OOBE)
+
+Windows10和Windows11的系统开箱界面有很大区别,但是基本操作都是相同的,这里提醒一点,就是在系统开箱的时候不要联网.
+
+如果是台式机,可以把网线拔掉,如果是笔记本,就不连接网络.
+
+对于现在的Windows11系统,如果不联网登录微软账户,就不允许我们继续下一步操作.但我们是有办法跳过这一限制的.
+
+**跳过联网强制登录微软账户方法:**
+
+按下键盘上的shift+F10(笔记本有可能需要按Fn)
+点击一下出现的cmd窗口
+在cmd里面输入
+`start ms-cxh:localonly`
+回车运行
+
+> 以上命令Windows10和Windows11均可使用.
+
+然后我们会直接到达创建账户的界面.创建一个不需要联网的本地账户即可,不建议在这时就设置密码,因为这时设置密码会强制我们设置安全问题的答案.可以在进入系统之后去控制面板里面设置新密码.
+
+建议账户名字为全英文,不包含符号和空格,防止有的软件不兼容.
+
+然后即可按照提示一步步操作,过程和步骤十分简单,不在这里详细说明.
+
+然后我们就可以见到新系统的第一面了.
+
+### 安装系统后
+虽然看起来这个系统已经配置完成可以正常使用了,但是他目前还只是一个毛坯房.我们需要深化配置一下这个崭新的Windows系统,才可以投入到正常使用中.
+
+### 安装微软常用运行库
+由于新系统可能没有微软常用运行库,可能导致很多的软件无法正常运行(提示:找不到xxxxx.dll,重新安装应用程序可能修复此问题).在网上下载微软常用运行库合集,一键安装即可.微软常用运行库合集目前的最新版本是20250619,
+下载链接如下:
+
+> https://wwbct.lanzouu.com/iE35V3ify7cf 
+> 密码:d75i
+
+### 安装驱动
+在本站下载的系统一般桌面都会有“激活&驱动”文件夹，点进去找到提供的补全驱动软件并打开就行了。">
+<meta property="og:title" content="使用PE系统安装Windows系统">
+<meta property="og:description" content="### 安装前的准备
+
+> 一个大于8GB的外部存储设备(如U盘,移动硬盘)
+> 一台待安装Windows系统的电脑
+> 一台可以正常使用的64位Windows系统电脑
+> 制作U盘可启动PE
+
+使用良心轻巧的纯净PE系统是我们能够正常安装Windows系统的保障.
+
+我们使用微PE系统.
+
+打开微PE的下载官网:
+
+https://www.wepe.com.cn/download.html
+
+下载微PE_v2.3版本.
+
+下载后得到一个软件,我们插入待制作PE的U盘,打开微PE工具箱.
+
+点击右下角的U盘标志,为U盘安装PE系统.
+
+确定待写入U盘为你插入的那个希望制作PE系统的U盘.
+
+> 请注意:使用微PE工具箱制作U盘PE系统的时候会进行U盘格式化,届时U盘里的数据会被清空.建议在制作之前备份U盘里的重要数据,或者用一个全新的U盘.
+
+直接点击下方'立即安装PE到U盘'
+
+软件会提示你格式化U盘是一个有数据丢失风险的操作,确定你的数据已经备份后,制作PE.
+
+> 等待大约1min,可以制作成功一个PE系统.
+
+> PE启动盘可以当做正常的U盘使用,我们的普通数据都可以放在U盘的大分区里.并不会受到其他影响.
+
+<img width='431' height='273' alt='Image' src='https://github.com/user-attachments/assets/7a6829e5-02f7-4bc8-9d88-c99a6def12d7' />
+
+### 下载Windows映像文件
+可在本站下载，多种系统版本可供选择
+可在资源整合盘或官网中自行下载
+资源整合盘：https://seenyerw21309.ysepan.com/
+官网：https://seenyerw21309.github.io/
+
+### 进入PE系统
+根据电脑主板型号的不同,进入PE系统的方式不同,但都是通过在开机的时候按下键盘上的按键进入PE系统的.
+
+![Image](https://github.com/user-attachments/assets/5a67edee-988a-4164-86aa-e4bc43af84fc)
+
+确定U盘已经被制作为PE系统启动盘.
+确定U盘里面有Windows系统的ISO文件.
+将待安装系统的电脑关机,并插入U盘.
+按下开机按钮,然后立刻快速按下当前电脑的开机启动热键
+进入选择启动项菜单的界面.这个界面因电脑而异,但会列出连接在这个电脑上的可启动设备.
+使用键盘上下键选择自己的U盘.一般可以通过U盘的品牌,容量等信息判断哪一个是U盘.
+回车,进入PE系统.
+在PE系统里安装全新Windows系统
+在PE系统里面安装Windows系统之前,我们需要确定:
+
+**哪一个分区要作为新Windows系统的C盘?**
+磁盘的分区表和分区规划与主板的固件是否匹配?
+**哪一个分区要作为新Windows系统的C盘?**
+一般来说,直接装到老Windows系统的分区里就可以.但是老Windows系统的分区需要格式化,才可以安装新的Windows系统.
+
+磁盘的分区表和分区规划与主板的固件是否匹配?
+一般情况下,新主板(UEFI固件)使用GPT磁盘分区表,老主板(BIOS固件)使用MBR分区表.
+
+UEFI固件需要一个FAT文件系统的EFI分区用作引导分区.
+
+BIOS固件需要磁盘上的一个分区是激活主分区,用于存放BOOTMGR引导文件和boot文件夹.
+
+> 如果你不太理解,不要紧,不要动磁盘分区和分区表,就在PE系统里格式化掉老系统的C盘,然后再往这里面安装一个新系统就可以了.
+
+### 下面介绍如何在PE系统里安装新系统.
+
+首先,确定待安装的系统盘是空的,文件系统为NTFS文件系统
+打开微PE桌面上的Windows安装器(实际上就是winntsetup)
+**选择Windows安装源:**
+选择下载的映像文件（通常为.wim或.esd格式，.GHO的安装方式本篇不赘述）
+**选择引导驱动器:**
+一般情况下Windows安装器会自动帮你选好,如果是UEFI固件,那么右侧会有一个绿色的EFI PART.
+如果是BIOS固件,那右侧会有三个绿色的圆点.
+如果有的圆点不是绿色,而是红色,那么说明引导驱动器有问题,安装系统后可能无法启动,需要依据情况判断如何配置.
+**选择系统驱动器**
+通俗的说,就是选择新系统的C盘.也就是安装系统的分区.
+请注意,这个分区一定是没有别的系统文件的NTFS分区.
+**'选项'区域**
+选择Windows系统的安装版本
+其它不用管
+点击右下角安装
+点击确定
+
+<img width='492' height='399' alt='Image' src='https://github.com/user-attachments/assets/5d64dae7-61c7-459e-b598-02da088c7bd9' />
+
+我们等待进度条跑完,就成功的安装Windows系统了.
+
+进入新系统
+上面的步骤结束后,我们可以重启电脑,拔下U盘,进入新安装后的Windows系统,体验系统开箱阶段.(OOBE)
+
+Windows10和Windows11的系统开箱界面有很大区别,但是基本操作都是相同的,这里提醒一点,就是在系统开箱的时候不要联网.
+
+如果是台式机,可以把网线拔掉,如果是笔记本,就不连接网络.
+
+对于现在的Windows11系统,如果不联网登录微软账户,就不允许我们继续下一步操作.但我们是有办法跳过这一限制的.
+
+**跳过联网强制登录微软账户方法:**
+
+按下键盘上的shift+F10(笔记本有可能需要按Fn)
+点击一下出现的cmd窗口
+在cmd里面输入
+`start ms-cxh:localonly`
+回车运行
+
+> 以上命令Windows10和Windows11均可使用.
+
+然后我们会直接到达创建账户的界面.创建一个不需要联网的本地账户即可,不建议在这时就设置密码,因为这时设置密码会强制我们设置安全问题的答案.可以在进入系统之后去控制面板里面设置新密码.
+
+建议账户名字为全英文,不包含符号和空格,防止有的软件不兼容.
+
+然后即可按照提示一步步操作,过程和步骤十分简单,不在这里详细说明.
+
+然后我们就可以见到新系统的第一面了.
+
+### 安装系统后
+虽然看起来这个系统已经配置完成可以正常使用了,但是他目前还只是一个毛坯房.我们需要深化配置一下这个崭新的Windows系统,才可以投入到正常使用中.
+
+### 安装微软常用运行库
+由于新系统可能没有微软常用运行库,可能导致很多的软件无法正常运行(提示:找不到xxxxx.dll,重新安装应用程序可能修复此问题).在网上下载微软常用运行库合集,一键安装即可.微软常用运行库合集目前的最新版本是20250619,
+下载链接如下:
+
+> https://wwbct.lanzouu.com/iE35V3ify7cf 
+> 密码:d75i
+
+### 安装驱动
+在本站下载的系统一般桌面都会有“激活&驱动”文件夹，点进去找到提供的补全驱动软件并打开就行了。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://seenyerw21309.github.io/post/shi-yong-PE-xi-tong-an-zhuang-Windows-xi-tong.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/218428462?v=4&size=64">
+<title>使用PE系统安装Windows系统</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">使用PE系统安装Windows系统</h1>
+<div class="title-right">
+    <a href="https://seenyerw21309.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/seenyerw21309/seenyerw21309.github.io/issues/8" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h3>安装前的准备</h3>
+<blockquote>
+<p>一个大于8GB的外部存储设备(如U盘,移动硬盘)<br>
+一台待安装Windows系统的电脑<br>
+一台可以正常使用的64位Windows系统电脑<br>
+制作U盘可启动PE</p>
+</blockquote>
+<p>使用良心轻巧的纯净PE系统是我们能够正常安装Windows系统的保障.</p>
+<p>我们使用微PE系统.</p>
+<p>打开微PE的下载官网:</p>
+<p><a href="https://www.wepe.com.cn/download.html" rel="nofollow">https://www.wepe.com.cn/download.html</a></p>
+<p>下载微PE_v2.3版本.</p>
+<p>下载后得到一个软件,我们插入待制作PE的U盘,打开微PE工具箱.</p>
+<p>点击右下角的U盘标志,为U盘安装PE系统.</p>
+<p>确定待写入U盘为你插入的那个希望制作PE系统的U盘.</p>
+<blockquote>
+<p>请注意:使用微PE工具箱制作U盘PE系统的时候会进行U盘格式化,届时U盘里的数据会被清空.建议在制作之前备份U盘里的重要数据,或者用一个全新的U盘.</p>
+</blockquote>
+<p>直接点击下方"立即安装PE到U盘"</p>
+<p>软件会提示你格式化U盘是一个有数据丢失风险的操作,确定你的数据已经备份后,制作PE.</p>
+<blockquote>
+<p>等待大约1min,可以制作成功一个PE系统.</p>
+</blockquote>
+<blockquote>
+<p>PE启动盘可以当做正常的U盘使用,我们的普通数据都可以放在U盘的大分区里.并不会受到其他影响.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7a6829e5-02f7-4bc8-9d88-c99a6def12d7"><img width="431" height="273" alt="Image" src="https://github.com/user-attachments/assets/7a6829e5-02f7-4bc8-9d88-c99a6def12d7" style="max-width: 100%; height: auto; max-height: 273px;"></a></p>
+<h3>下载Windows映像文件</h3>
+<p>可在本站下载，多种系统版本可供选择<br>
+可在资源整合盘或官网中自行下载<br>
+资源整合盘：<a href="https://seenyerw21309.ysepan.com/" rel="nofollow">https://seenyerw21309.ysepan.com/</a><br>
+官网：<a href="https://seenyerw21309.github.io/" rel="nofollow">https://seenyerw21309.github.io/</a></p>
+<h3>进入PE系统</h3>
+<p>根据电脑主板型号的不同,进入PE系统的方式不同,但都是通过在开机的时候按下键盘上的按键进入PE系统的.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/5a67edee-988a-4164-86aa-e4bc43af84fc"><img src="https://github.com/user-attachments/assets/5a67edee-988a-4164-86aa-e4bc43af84fc" alt="Image" style="max-width: 100%;"></a></p>
+<p>确定U盘已经被制作为PE系统启动盘.<br>
+确定U盘里面有Windows系统的ISO文件.<br>
+将待安装系统的电脑关机,并插入U盘.<br>
+按下开机按钮,然后立刻快速按下当前电脑的开机启动热键<br>
+进入选择启动项菜单的界面.这个界面因电脑而异,但会列出连接在这个电脑上的可启动设备.<br>
+使用键盘上下键选择自己的U盘.一般可以通过U盘的品牌,容量等信息判断哪一个是U盘.<br>
+回车,进入PE系统.<br>
+在PE系统里安装全新Windows系统<br>
+在PE系统里面安装Windows系统之前,我们需要确定:</p>
+<p><strong>哪一个分区要作为新Windows系统的C盘?</strong><br>
+磁盘的分区表和分区规划与主板的固件是否匹配?<br>
+<strong>哪一个分区要作为新Windows系统的C盘?</strong><br>
+一般来说,直接装到老Windows系统的分区里就可以.但是老Windows系统的分区需要格式化,才可以安装新的Windows系统.</p>
+<p>磁盘的分区表和分区规划与主板的固件是否匹配?<br>
+一般情况下,新主板(UEFI固件)使用GPT磁盘分区表,老主板(BIOS固件)使用MBR分区表.</p>
+<p>UEFI固件需要一个FAT文件系统的EFI分区用作引导分区.</p>
+<p>BIOS固件需要磁盘上的一个分区是激活主分区,用于存放BOOTMGR引导文件和boot文件夹.</p>
+<blockquote>
+<p>如果你不太理解,不要紧,不要动磁盘分区和分区表,就在PE系统里格式化掉老系统的C盘,然后再往这里面安装一个新系统就可以了.</p>
+</blockquote>
+<h3>下面介绍如何在PE系统里安装新系统.</h3>
+<p>首先,确定待安装的系统盘是空的,文件系统为NTFS文件系统<br>
+打开微PE桌面上的Windows安装器(实际上就是winntsetup)<br>
+<strong>选择Windows安装源:</strong><br>
+选择下载的映像文件（通常为.wim或.esd格式，.GHO的安装方式本篇不赘述）<br>
+<strong>选择引导驱动器:</strong><br>
+一般情况下Windows安装器会自动帮你选好,如果是UEFI固件,那么右侧会有一个绿色的EFI PART.<br>
+如果是BIOS固件,那右侧会有三个绿色的圆点.<br>
+如果有的圆点不是绿色,而是红色,那么说明引导驱动器有问题,安装系统后可能无法启动,需要依据情况判断如何配置.<br>
+<strong>选择系统驱动器</strong><br>
+通俗的说,就是选择新系统的C盘.也就是安装系统的分区.<br>
+请注意,这个分区一定是没有别的系统文件的NTFS分区.<br>
+<strong>"选项"区域</strong><br>
+选择Windows系统的安装版本<br>
+其它不用管<br>
+点击右下角安装<br>
+点击确定</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/5d64dae7-61c7-459e-b598-02da088c7bd9"><img width="492" height="399" alt="Image" src="https://github.com/user-attachments/assets/5d64dae7-61c7-459e-b598-02da088c7bd9" style="max-width: 100%; height: auto; max-height: 399px;"></a></p>
+<p>我们等待进度条跑完,就成功的安装Windows系统了.</p>
+<p>进入新系统<br>
+上面的步骤结束后,我们可以重启电脑,拔下U盘,进入新安装后的Windows系统,体验系统开箱阶段.(OOBE)</p>
+<p>Windows10和Windows11的系统开箱界面有很大区别,但是基本操作都是相同的,这里提醒一点,就是在系统开箱的时候不要联网.</p>
+<p>如果是台式机,可以把网线拔掉,如果是笔记本,就不连接网络.</p>
+<p>对于现在的Windows11系统,如果不联网登录微软账户,就不允许我们继续下一步操作.但我们是有办法跳过这一限制的.</p>
+<p><strong>跳过联网强制登录微软账户方法:</strong></p>
+<p>按下键盘上的shift+F10(笔记本有可能需要按Fn)<br>
+点击一下出现的cmd窗口<br>
+在cmd里面输入<br>
+<code class="notranslate">start ms-cxh:localonly</code><br>
+回车运行</p>
+<blockquote>
+<p>以上命令Windows10和Windows11均可使用.</p>
+</blockquote>
+<p>然后我们会直接到达创建账户的界面.创建一个不需要联网的本地账户即可,不建议在这时就设置密码,因为这时设置密码会强制我们设置安全问题的答案.可以在进入系统之后去控制面板里面设置新密码.</p>
+<p>建议账户名字为全英文,不包含符号和空格,防止有的软件不兼容.</p>
+<p>然后即可按照提示一步步操作,过程和步骤十分简单,不在这里详细说明.</p>
+<p>然后我们就可以见到新系统的第一面了.</p>
+<h3>安装系统后</h3>
+<p>虽然看起来这个系统已经配置完成可以正常使用了,但是他目前还只是一个毛坯房.我们需要深化配置一下这个崭新的Windows系统,才可以投入到正常使用中.</p>
+<h3>安装微软常用运行库</h3>
+<p>由于新系统可能没有微软常用运行库,可能导致很多的软件无法正常运行(提示:找不到xxxxx.dll,重新安装应用程序可能修复此问题).在网上下载微软常用运行库合集,一键安装即可.微软常用运行库合集目前的最新版本是20250619,<br>
+下载链接如下:</p>
+<blockquote>
+<p><a href="https://wwbct.lanzouu.com/iE35V3ify7cf" rel="nofollow">https://wwbct.lanzouu.com/iE35V3ify7cf</a><br>
+密码:d75i</p>
+</blockquote>
+<h3>安装驱动</h3>
+<p>在本站下载的系统一般桌面都会有“激活&amp;驱动”文件夹，点进去找到提供的补全驱动软件并打开就行了。<br>
+如果没有可下载：</p>
+<blockquote>
+<p><a href="https://wwbct.lanzouu.com/iH7QU3ifyete" rel="nofollow">https://wwbct.lanzouu.com/iH7QU3ifyete</a><br>
+密码:2ab8</p>
+</blockquote>
+<p>经过以上的操作,我们就可以正常的使用一个全新的Windows系统了.</p>
+<p>最后更新时间2026.2.13，后续步骤会优化的。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://seenyerw21309.github.io">SEEN_SYSTEM</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","seenyerw21309/seenyerw21309.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
