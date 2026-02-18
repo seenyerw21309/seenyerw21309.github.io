@@ -106,3 +106,6 @@ Win + R 输入：
 • 安装软件一律 自定义安装
 • 取消所有捆绑、锁定主页、修改导航
 • 不使用不明破解、封装、脚本工具
+
+附件
+Geek Uninstaller下载：https://wwp.lanzoup.com/iVJ8A3ipluoh
