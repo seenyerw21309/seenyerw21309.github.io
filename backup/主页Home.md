@@ -28,10 +28,14 @@ https://www.wepe.com.cn/download.html
 https://firpe.cn/page-247
 https://www.xyboot.com/
 https://www.sysceo.com/usm
-https://www.uqitong.com/
+盗版链接已删除
 ### 作者联系方式
 作者QQ：3575735363
 作者邮箱：seenyerw21309sys@163.com
+### VIP充值（正在调试中，请勿充值）
+https://afdian.com/a/aaaa798
+### SEEN INSTALL购买链接
+https://afdian.com/a/aaaa798
 ### 赞助
 ![Image](https://github.com/user-attachments/assets/bc55f6ff-0c0f-42f3-82d3-b473e7d98f8f)
 ![Image](https://github.com/user-attachments/assets/1f2ef285-3d91-48ec-a730-b9c9f0788f2c)
