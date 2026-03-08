@@ -5,7 +5,13 @@
 ### 介绍
 采用Windows 7 SP1 简体中文专业版封装制作，少量精简，整合到26年1月的补丁，适合新旧各种机型。
 采用最新运行库、系统完整、纯净、没有任何个人信息。
-系统截图
+### 注意事项
+1. 封装工具在进桌面时强行捆绑2345加速浏览器，非本站恶意捆绑，删除教程请见：https://seenyerw21309.github.io/post/liu-lan-qi-shou-ye-bei-jie-chi-cheng-%20hao123%EF%BC%9FChrome-Edge%20-che-di-qing-chu-jiao-cheng-%EF%BC%88-han-liu-mang-ruan-jian-%EF%BC%89.html
+
+2. 我们已经尽最大的努力去做系统，使用中遇到问题可加入问题反馈群1055978707
+
+3. 系统在部署中会检测USB驱动器中的万能驱动，请提前将下载好的万能驱动放入USB驱动器中。如果个别驱动装不上可见桌面文件夹“激活&驱动”文件夹内的驱动工具。
+### 系统截图
 
 <img width="2538" height="1599" alt="Image" src="https://github.com/user-attachments/assets/56a41205-8fc4-4724-bfd5-f21aa27833ee" />
 <img width="2535" height="1598" alt="Image" src="https://github.com/user-attachments/assets/680114f1-5f9f-477b-8f59-8ff36fa8d1b1" />
@@ -53,3 +59,5 @@ https://www.123865.com/s/ddQEjv-cIK2A
 https://1drv.ms/f/c/3e7bc9acf5739238/IgCwQtYk5r75QJu7-ygDw-iVAfl7qYFGnYs4wDeod5fdRHg
 **资源整合盘（\最新系统下载）**
 http://seenyerw21309.ysepan.com/
+### 免责声明：
+本系统仅为个人学习、研究和演示快速封装部署技术，其版权归属微软公司和各自产权所有者，作者不承担任何技术及版权问题；非法传播或用于商业用途，自负法律责任；请在下载后24小时内删除，如果您觉得满意，请支持购买正版授权。
