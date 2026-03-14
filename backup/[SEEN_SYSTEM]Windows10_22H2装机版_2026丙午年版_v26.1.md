@@ -65,9 +65,9 @@ CRC32：41CEC4CE
 
 ### 下载链接
 **123云盘**
-
+https://www.123865.com/s/ddQEjv-6gK2A
 **OneDrive**
-
+https://1drv.ms/u/c/3e7bc9acf5739238/IQBwll6K7UhoR7vCpgDQ5-usAWqhc5AAqpuH58v0vFjwimk?e=aggo6F
 **资源整合盘（\最新系统下载）**
 http://seenyerw21309.ysepan.com/
 
