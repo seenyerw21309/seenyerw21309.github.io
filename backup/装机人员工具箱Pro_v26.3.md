@@ -97,7 +97,14 @@ http://seenyerw21309.ysepan.com/
 链接: https://pan.baidu.com/s/1YeB6L7FQZC8JaktPwo2QwQ?pwd=ke5c 提取码: ke5c
 **Huang1111网盘**
 https://pan.huang1111.cn/s/8QK9lSQ
+**Github Release**
+https://github.com/seenyerw21309/Installer-Toolbox-Pro/releases/download/release/Pro_v26.3g.7z
 
 ### 免责声明
 本工具箱仅为个人学习、研究和演示电脑技术，其版权归属各自产权所有者，作者不承担任何技术及版权问题；非法传播或用于商业用途，自负法律责任；请在下载后24小时内删除，如果您觉得满意，请支持购买正版授权。
 
+Github仓库：https://github.com/seenyerw21309/Installer-Toolbox-Pro
+作者主页：https://seenyerw21309.github.io/post/zhu-ye-Home.html
+作者 QQ：3575735363
+作者邮箱：seenyerw21309sys@163.com
+问题反馈群/交流群：1055978707
